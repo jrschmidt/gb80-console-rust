@@ -15,18 +15,8 @@ fn main() -> std::io::Result<()> {
         Line::from("THE FIFTH LINE"),
         ];
 
-
-        // let text= Text::from(vec![
-        //     Line::from("hello world 1").left_aligned(),
-        //     Line::from("hello world 2"),
-        //     Line::from("hello world 3").right_aligned(),
-
-
-
     term_lines.push(Line::from("AND A SIXTH LINE..."));
 
-
-    // Line::from("THE FIFTH LINE")
 
     // let mut term_lines = term_content.iter().map(|line_content| Line::from("SOME LINE ... ??")).collect();
 
@@ -34,6 +24,7 @@ fn main() -> std::io::Result<()> {
     // for line_content in term_content {
     //     term_lines.push(Line::from(line_content));
     // }
+
 
     let term_text = Text::from(term_lines).green().bold();
 
@@ -43,8 +34,13 @@ fn main() -> std::io::Result<()> {
 
     loop {
         if let Event::Key(key) = event::read()? {
-            if key.kind == KeyEventKind::Press && key.code == KeyCode::Char('q') {
-                break;
+            if key.kind == KeyEventKind::Press {
+                match key.code {
+                    KeyCode::Char('q') => break,
+                    KeyCode::Char('a') => break,
+                    KeyCode::Char('b') => break,
+                    _ => {}
+                }
             }
         }
     }
