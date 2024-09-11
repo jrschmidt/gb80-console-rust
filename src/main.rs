@@ -7,10 +7,22 @@ use ratatui::{
 fn main() -> std::io::Result<()> {
     let mut terminal = ratatui::init();
 
+    let z = [
+            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+            'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+            'U', 'V', 'W', 'X', 'Y', 'Z', ' ', 'H', 'E', 'R',
+            'E', ' ', 'I', 'S', ' ', 'A', ' ', 'C', 'O', 'L',
+            'L', 'E', 'C', 'T', 'I', 'O', 'N', ' ', 'O', 'F',
+            ' ', 'C', 'H', 'A', 'R', ' ', 'V', 'A', 'L', 'U',
+            'E', 'S', ' ', 'I', 'N', ' ', 'A', 'N', ' ', '8',
+            '0', ' ', 'C', 'H', 'A', 'R', 'L', 'I', 'N', 'E'
+    ];
+
+
     let mut term_lines = vec![
         Line::from("THE FIRST LINE"),
         Line::from("THE SECOND LINE"),
-        Line::from("THE THIRD LINE"),
+        Line::from(z.iter().collect::<String>()),
         Line::from("THE FOURTH LINE"),
         Line::from("THE FIFTH LINE"),
         ];
