@@ -7,36 +7,38 @@ use ratatui::{
 fn main() -> std::io::Result<()> {
     let mut terminal = ratatui::init();
 
-    let z = [
-            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
-            'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-            'U', 'V', 'W', 'X', 'Y', 'Z', ' ', 'H', 'E', 'R',
-            'E', ' ', 'I', 'S', ' ', 'A', ' ', 'C', 'O', 'L',
-            'L', 'E', 'C', 'T', 'I', 'O', 'N', ' ', 'O', 'F',
-            ' ', 'C', 'H', 'A', 'R', ' ', 'V', 'A', 'L', 'U',
-            'E', 'S', ' ', 'I', 'N', ' ', 'A', 'N', ' ', '8',
-            '0', ' ', 'C', 'H', 'A', 'R', 'L', 'I', 'N', 'E'
-    ];
-
-
-    let mut term_lines = vec![
-        Line::from("THE FIRST LINE"),
-        Line::from("THE SECOND LINE"),
-        Line::from(z.iter().collect::<String>()),
-        Line::from("THE FOURTH LINE"),
-        Line::from("THE FIFTH LINE"),
+    let term_content = vec![
+        "THE FIRST LINE",
+        "THE SECOND LINE",
+        "THE THIRD LINE",
+        "THE FOURTH LINE",
+        "THE FIFTH LINE",
+        "AND A SIXTH LINE...",
+        "LINE NUMBER 7",
+        "LINE NUMBER 8",
+        "LINE NUMBER 9",
+        "LINE NUMBER 10",
+        "LINE NUMBER 11",
+        "LINE NUMBER 12",
+        "LINE NUMBER 13",
+        "LINE NUMBER 14",
+        "LINE NUMBER 15",
+        "LINE NUMBER 16",
+        "LINE NUMBER 17",
+        "LINE NUMBER 18",
+        "LINE NUMBER 19",
+        "LINE NUMBER 20",
+        "LINE NUMBER 21",
+        "LINE NUMBER 22",
+        "LINE NUMBER 23",
+        "LINE NUMBER 24"
         ];
 
-    term_lines.push(Line::from("AND A SIXTH LINE..."));
+    let mut term_lines = vec![];
 
-
-    // let mut term_lines = term_content.iter().map(|line_content| Line::from("SOME LINE ... ??")).collect();
-
-    // let mut term_lines = [];
-    // for line_content in term_content {
-    //     term_lines.push(Line::from(line_content));
-    // }
-
+    for i in 0..23 {
+        term_lines.push(Line::from(term_content[i]));
+    }
 
     let term_text = Text::from(term_lines).green().bold();
 
