@@ -34,13 +34,7 @@ fn main() -> std::io::Result<()> {
         "LINE NUMBER 24"
         ];
 
-    let mut term_lines = vec![];
-
-    for i in 0..23 {
-        term_lines.push(Line::from(term_content[i]));
-    }
-
-    let term_text = Text::from(term_lines).green().bold();
+    let term_text = text_from_string_slice_array(term_content);
 
     terminal.draw(|frame| {
         frame.render_widget(term_text, frame.area());
@@ -60,4 +54,14 @@ fn main() -> std::io::Result<()> {
     }
     ratatui::restore();
     Ok(())
+}
+
+fn text_from_string_slice_array(content: Vec<&str>) -> Text {
+    let mut t_lines = vec![];
+    for i in 0..23 {
+        t_lines.push(Line::from(content[i]));
+    }
+
+    let t_text = Text::from(t_lines).green().bold();
+    return t_text;
 }
