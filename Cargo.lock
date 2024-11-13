@@ -109,7 +109,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "gb80_console_rust"
+name = "gb80_console"
 version = "0.1.0"
 dependencies = [
  "ratatui",
